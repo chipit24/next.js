@@ -36,10 +36,10 @@ impl EcmascriptChunkItemContent {
     pub async fn new(
         content: Vc<EcmascriptModuleContent>,
         chunking_context: Vc<Box<dyn ChunkingContext>>,
-        options: Vc<EcmascriptOptions>,
+        options: EcmascriptOptions,
         async_module_options: Vc<OptionAsyncModuleOptions>,
     ) -> Result<Vc<Self>> {
-        let refresh = options.await?.refresh;
+        let refresh = options.refresh;
         let externals = *chunking_context
             .environment()
             .supports_commonjs_externals()

@@ -51,7 +51,7 @@ impl EcmascriptChunkItem for EcmascriptModuleLocalsChunkItem {
         Ok(EcmascriptChunkItemContent::new(
             content,
             *chunking_context,
-            *original_module.await?.options,
+            *original_module.await?.options.await?,
             async_module_options,
         ))
     }

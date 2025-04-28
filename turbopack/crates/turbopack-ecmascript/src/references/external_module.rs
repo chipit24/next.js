@@ -263,7 +263,7 @@ impl EcmascriptChunkItem for CachedExternalModuleChunkItem {
         EcmascriptChunkItemContent::new(
             self.module.content(),
             *self.chunking_context,
-            EcmascriptOptions::default().cell(),
+            EcmascriptOptions::default(),
             async_module_options,
         )
     }
